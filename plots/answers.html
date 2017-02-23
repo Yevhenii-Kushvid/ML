@@ -1,0 +1,61 @@
+<html lang='en'>
+<head>
+  <title>Nyaplot</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+  <script>if(window['d3'] === undefined ||
+   window['Nyaplot'] === undefined){
+    var path = {"d3":"https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min","downloadable":"http://cdn.rawgit.com/domitry/d3-downloadable/master/d3-downloadable"};
+
+
+
+    var shim = {"d3":{"exports":"d3"},"downloadable":{"exports":"downloadable"}};
+
+    require.config({paths: path, shim:shim});
+
+
+require(['d3'], function(d3){window['d3']=d3;console.log('finished loading d3');require(['downloadable'], function(downloadable){window['downloadable']=downloadable;console.log('finished loading downloadable');
+
+	var script = d3.select("head")
+	    .append("script")
+	    .attr("src", "http://cdn.rawgit.com/domitry/Nyaplotjs/master/release/nyaplot.js")
+	    .attr("async", true);
+
+	script[0][0].onload = script[0][0].onreadystatechange = function(){
+
+
+	    var event = document.createEvent("HTMLEvents");
+	    event.initEvent("load_nyaplot",false,false);
+	    window.dispatchEvent(event);
+	    console.log('Finished loading Nyaplotjs');
+
+	};
+
+
+});});
+}
+</script>
+</head>
+<body><div id='vis-cb3d91f5-8a55-4849-a50a-9e9bd883e471'></div>
+<script>
+(function(){
+    var render = function(){
+        var model = {"panes":[{"diagrams":[{"type":"line","options":{"x":"x","y":"y"},"data":"6f6b50b2-834e-4a84-974a-236e4bc83bab"}],"options":{"zoom":true,"width":700,"xrange":[1,15],"yrange":[0.0,104.34317528327747]}}],"data":{"6f6b50b2-834e-4a84-974a-236e4bc83bab":[{"x":1,"y":3.637033408196362},{"x":2,"y":0.0},{"x":3,"y":7.031604388393325},{"x":4,"y":17.13454231963618},{"x":5,"y":20.93325506413381},{"x":6,"y":11.153619229041102},{"x":7,"y":12.931752469640482},{"x":8,"y":60.45594825115586},{"x":9,"y":68.13421340830175},{"x":10,"y":70.80134861039822},{"x":11,"y":77.42893246974599},{"x":12,"y":88.82494946798377},{"x":13,"y":95.37175831798362},{"x":14,"y":97.79636643327764},{"x":15,"y":104.34317528327747}]},"extension":[]}
+        var id_name = '#vis-cb3d91f5-8a55-4849-a50a-9e9bd883e471';
+        Nyaplot.core.parse(model, id_name);
+
+        require(['downloadable'], function(downloadable){
+          var svg = d3.select(id_name).select("svg");
+	  if(!svg.empty())
+	    svg.call(downloadable().filename('fig'));
+	});
+    };
+    if(window['Nyaplot']==undefined){
+        window.addEventListener('load_nyaplot', render, false);
+	return;
+    } else {
+       render();
+    }
+})();
+</script>
+</body>
+</html>
