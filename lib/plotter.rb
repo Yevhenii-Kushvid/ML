@@ -9,4 +9,8 @@ class Plotter
     plot.add_with_df(dataframe, type, :x, :y)
     plot.export_html(to)
   end
+
+  def self.plot_frame
+
+  end
 end

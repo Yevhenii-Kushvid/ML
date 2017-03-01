@@ -1,93 +1,44 @@
 require './lib/neural_network/neuron'
+require 'matrix'
 
 class Teacher
-  def initialize(speed_of_teaching = 0.1)
+  attr_accessor :speed_of_teaching, :max_error_level
+
+  def initialize(speed_of_teaching: 0.1, max_error_level: 0.0)
     @speed_of_teaching = speed_of_teaching
+    @max_error_level = max_error_level
   end
 
-  # inputs  = Array of inputs
-  # answers = Array of answers for questions(inputs)
-  def teach(neuron, inputs, answers)
+  def teach(model: nil, questions:, answers:)
+    check_input_data(model, questions, answers)
 
-    if inputs.size == answers.size
-      inputs.size.times { |iteration|
-
-        # error = neuron.solv(inputs[iteration]) - answers[iteration]
-        error = -2 * ( answers[iteration] - neuron.solv(inputs[iteration]))
-
-        neuron.study(@speed_of_teaching, error)
-      }
-      true
-    else
-      return Exception.new('Amount of incoming inputs and answers are need to be eql.')
+    # Initiate study on model
+    questions.each_with_index do |question, index|
+      # One question and answer for it
+      model.study(question: question, answer: answers[index], speed_of_study: @speed_of_teaching)
     end
-
-  end
-
-  def teach_matrix(neuron, problem, solved_problem)
-
-    problem_points = get_asked_points(problem)
-    problem_points.size.times { |iteration|
-      row_number = problem_points[iteration][0]
-      position_in_row = problem_points[iteration][1]
-
-      error = neuron.solv([row_number, position_in_row]) - solved_problem[row_number][position_in_row]
-      # error = -2 * ( solved_problem[row_number][position_in_row] - neuron.solv([row_number, position_in_row]))
-
-      puts "ERROR = #{error}"
-      neuron.study(@speed_of_teaching, error)
-    }
     true
-
   end
 
-  def test(neuron, inputs, answers)
-    result = Array.new(inputs.size)
+  def test(model: nil, questions:, answers:)
+    check_input_data(model, questions, answers)
+    result = Array.new(questions.size)
 
-    if inputs.size == answers.size
-      answers.size.times do |iteration|
-        puts neuron.solv(inputs[iteration])
-        # result[iteration] = neuron.solv(inputs[iteration]) == answers[iteration]
-        result[iteration] = ((answers[iteration] - 0.1)..(answers[iteration] + 0.1)).include? neuron.solv(inputs[iteration])
-      end
-      result
-    else
-      return Exception.new('Amount of incoming inputs and answers are need to be eql.')
+    answers.each_with_index do |real_answer, iteration|
+      our_answer = model.solv(questions[iteration])
+      our_answer = [our_answer] unless our_answer.kind_of? Array
+
+      result[iteration] = (Vector[*our_answer] - Vector[*real_answer])
+                              .to_a.inject(0){|sum, n| sum + n.abs} < @max_error_level
     end
+    result.count(true).to_f / result.count
   end
 
-  # 0 - first class, 1 - second class, 2 - question
-  def test_matrix(neuron, problem, solved_problem)
-    #############################
-    # check of neuron is valid
-    # 2 inputs for position
-    #############################
-    # 1 input for image if grey
-    # 3 inputs for image if colored without opacity
-    # 4 inputs for image if colored with opacity
-    #############################
-    return Exception.new('Number of coordinates must be equal to number if inputs of neuron.') unless neuron.number_of_inputs == 2
+  private
 
-    problem_points = get_asked_points(problem)
-
-    result = Array.new(problem_points.count)
-    result.length.times{ |iteration|
-      row_number = problem_points[iteration][0]
-      position_in_row = problem_points[iteration][1]
-
-      result[iteration] = neuron.solv(problem_points[iteration]) == solved_problem[row_number][position_in_row]
-      p "result = #{neuron.solv(problem_points[iteration])} == #{solved_problem[row_number][position_in_row]}"
-    }
-    result
+  def check_input_data(model, questions, answers)
+    raise "Model shoud be present and kind of ML::Model: #{model.class.ancestors}" unless !model.nil? && model.kind_of?(Model)
+    raise 'Need questions and answers for study self' if questions.empty? or answers.empty?
+    raise 'The number of questions should be equal to the number of answers' unless questions.size == answers.size
   end
-
-  def get_asked_points(problem)
-    problem.collect {|row_number, position_hash|
-      points = position_hash.collect { |position_in_row, value|
-        [row_number, position_in_row] if value == 0
-      }
-      points if points.compact.count > 0
-    }.flatten(1).compact
-  end
-
 end
