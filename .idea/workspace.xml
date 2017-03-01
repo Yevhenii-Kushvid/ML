@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e5ed914-36c3-44f6-ab2e-639134af7fc1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/kernel_functions/kernel_function.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/kernel_functions/rb_kernel_function.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/kernel_functions/signum_kernel_function.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/kernel_functions/sin_kernel_function.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/kernel_functions/tanh_kernel_function.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/model.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/neural_network/neural_network.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ML.iml" afterPath="$PROJECT_DIR$/.idea/ML.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/neural_network/neuron.rb" afterPath="$PROJECT_DIR$/lib/neural_network/neuron.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/plotter.rb" afterPath="$PROJECT_DIR$/lib/plotter.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/teacher.rb" afterPath="$PROJECT_DIR$/lib/teacher.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/neural_network/neural_network.rb" afterPath="$PROJECT_DIR$/lib/neural_network/neural_network.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.rb" afterPath="$PROJECT_DIR$/main.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/answers.html" afterPath="$PROJECT_DIR$/plots/answers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/data.html" afterPath="$PROJECT_DIR$/plots/data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/nn_results.html" afterPath="$PROJECT_DIR$/plots/nn_results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/results.html" afterPath="$PROJECT_DIR$/plots/results.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/table.csv" afterPath="$PROJECT_DIR$/data/apple_prices.csv" />
     </list>
     <ignored path="ML.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +22,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ML@main.coverage" NAME="main Coverage Results" MODIFIED="1488367977096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ML" />
+    <SUITE FILE_PATH="coverage/ML@main.coverage" NAME="main Coverage Results" MODIFIED="1488368388263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ML" />
     <SUITE FILE_PATH="coverage/ML@model.coverage" NAME="model Coverage Results" MODIFIED="1488276921956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="ML" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -47,8 +37,8 @@
       <file leaf-file-name="main.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+            <state relative-caret-position="388">
+              <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -67,8 +57,8 @@
       <file leaf-file-name="neural_network.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/neural_network/neural_network.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="352">
+              <caret line="16" column="116" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -103,8 +93,8 @@
         <option value="$PROJECT_DIR$/lib/teacher.rb" />
         <option value="$PROJECT_DIR$/lib/kernel_functions/sin_kernel_function.rb" />
         <option value="$PROJECT_DIR$/lib/kernel_functions/tanh_kernel_function.rb" />
-        <option value="$PROJECT_DIR$/lib/neural_network/neural_network.rb" />
         <option value="$PROJECT_DIR$/lib/neural_network/neuron.rb" />
+        <option value="$PROJECT_DIR$/lib/neural_network/neural_network.rb" />
         <option value="$PROJECT_DIR$/main.rb" />
       </list>
     </option>
@@ -382,12 +372,12 @@
       <workItem from="1488265906906" duration="130000" />
       <workItem from="1488266364866" duration="9634000" />
       <workItem from="1488284337540" duration="1503000" />
-      <workItem from="1488303079809" duration="15016000" />
+      <workItem from="1488303079809" duration="15409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45882000" />
+    <option name="totallyTimeSpent" value="46275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +397,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80973953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.80973953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86296713" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -789,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/neural_network/neural_network.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="352">
+          <caret line="16" column="116" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
           <folding />
         </state>
       </provider>
@@ -805,8 +795,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        <state relative-caret-position="388">
+          <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
           <folding />
         </state>
       </provider>

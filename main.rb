@@ -59,7 +59,7 @@ Plotter.plot :line, (1..answers.count).to_a, answers.map { |answer| answer.first
 Plotter.plot :line, (1..results.count).to_a, results.reverse, './plots/results.html'
 
 ###################################################################################################################
-neural_network = NeuralNetwork.new(number_of_inputs: 7, structure: [6, 1])
+neural_network = NeuralNetwork.new(number_of_inputs: 7, structure: [4, 1])
 
 10_000.times do |iteration|
   teacher.teach(model: neural_network, questions: questions, answers: answers)

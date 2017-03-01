@@ -3,7 +3,7 @@ require './lib/neural_network/neuron'
 class NeuralNetwork < Model
   attr_reader :structure, :input, :resut
 
-  def initialize(number_of_inputs: 2, structure: [2, 1])
+  def initialize(number_of_inputs: 2, structure: [2, 1], kernel: TanhKernelFunction)
     @number_of_questions = number_of_inputs
     @structure = {}
     structure.size.times do |number_of_layer|
@@ -12,9 +12,9 @@ class NeuralNetwork < Model
 
       layer_amount.times do |index|
         if number_of_layer == 0
-          @structure[number_of_layer] << Neuron.new(number_of_inputs: number_of_inputs)
+          @structure[number_of_layer] << Neuron.new(number_of_inputs: number_of_inputs, kernel: kernel)
         else
-          @structure[number_of_layer] << Neuron.new(number_of_inputs: structure[number_of_layer - 1])
+          @structure[number_of_layer] << Neuron.new(number_of_inputs: structure[number_of_layer - 1], kernel: kernel)
         end
       end
     end
